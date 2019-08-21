@@ -9,10 +9,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "start": "json-server --watch db.json",
+    "nodemon": "nodemon ./server/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "live-server": "^1.2.1",
     "nodemon": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
