@@ -4,6 +4,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <div>
         <form className="px-4 py-3">
           <div>
             <input type="email" className="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com"/>
@@ -23,6 +24,7 @@ export default class App extends Component {
         <a className="dropdown-item" href="#">New around here? Sign up</a>
         <a className="dropdown-item" href="#">Forgot password?</a>
       </div>
+    </div>
     )
   }
 }
