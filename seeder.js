@@ -1,0 +1,2 @@
+const fake = require('faker');
+

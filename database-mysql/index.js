@@ -1,19 +1,22 @@
-const mysql = require("mysql")
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/fetcher');
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'omega1984',
-    password: '1917',
-    database: 'reservation'
-})
+const Schema = mongoose.Schema({
+    roomId: Number,
+    numberOfReservations:Number,
+    bookings: [{
+        checkInDate: Date,
+        duration: Number
+    }],
+    price: Number,
+    cleaningFee: Number,
+    serviceFee: Number,
+    minimumStay: Number,
+    maxAdults: Number,
+    maxChildren: Number,
+    maxInfants: Number,
+    taxes: Number,
+    tipsTitle: String,
+    tipsContent: String
+});
 
-db.connect((err) => {
-    if (err){
-        console.log(err);
-        return;
-    }else{
-        console.log('connected to database')
-    }
-})
-
-module.exports = db;
