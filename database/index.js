@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher');
 
-const Schema = mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const ReservationSchema = new Schema({
     roomId: Number,
     numberOfReservations:Number,
     bookings: [{
@@ -20,3 +22,6 @@ const Schema = mongoose.Schema({
     tipsContent: String
 });
 
+const Reservation = mongoose.model('Reservation', ReservationSchema);
+
+module.exports.Reservation = Reservation;
