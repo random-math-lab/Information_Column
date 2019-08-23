@@ -1,27 +1,26 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fetcher');
+const mysql = require("mysql");
+const seeder = require("../seeder.js")
 
-const Schema = mongoose.Schema;
+const db = mysql.createConnection({
+    user: 'omega1984',
+    password: '1917',
+    database: 'reservation'
+})
 
-const ReservationSchema = new Schema({
-    roomId: Number,
-    numberOfReservations:Number,
-    bookings: [{
-        checkInDate: Date,
-        duration: Number
-    }],
-    price: Number,
-    cleaningFee: Number,
-    serviceFee: Number,
-    minimumStay: Number,
-    maxAdults: Number,
-    maxChildren: Number,
-    maxInfants: Number,
-    taxes: Number,
-    tipsTitle: String,
-    tipsContent: String
-});
+db.connect((err) => {
+    if (err){
+        console.log(err);
+        return;
+    }else{
+        console.log('connected to database')
+    }
+})
 
-const Reservation = mongoose.model('Reservation', ReservationSchema);
+db.query("TRUNCATE TABLE guests")
+for (let i = 0; i < seeder.allData.length; i++){
+    let currentData = seeder.allData[i];
+    let sql = `INSERT INTO guests (price, availability, numberOfGuests) values (?, ?, ?)`
+    db.query(sql, [currentData.price, currentData.availability, currentData.numberOfGuests])
+}
 
-module.exports.Reservation = Reservation;
+module.exports.db = db;
