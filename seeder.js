@@ -10,13 +10,28 @@ getNumberOfGuests = () =>{
   return Math.floor(Math.random()*7) + 4;
 }
 
+getRatings = () =>{
+  return (Math.floor(Math.random()*101) + 400)/100;
+}
+
+getNumberOfRatings = () =>{
+  return Math.floor(Math.random()*301) + 100;
+}
+
+getViews = () =>{
+  return Math.floor(Math.random()*401) + 100;
+}
+
 getReservationInfo = (id) =>{
   let info = {};
   info = {
     id: id,
     price: getPrice(),
     availability: getAvailability(),
-    numberOfGuests: getNumberOfGuests()
+    numberOfGuests: getNumberOfGuests(),
+    ratings: getRatings(),
+    numberOfRatings: getNumberOfRatings(),
+    numberOfViews: getViews()
   }
   return info;
 }
