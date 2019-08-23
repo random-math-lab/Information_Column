@@ -24,13 +24,28 @@ export default class DatePickerForm extends Component {
   }
 
   render() {
+    let unitPrice = this.state.guests.map(guest =>{
+      return guest.price
+    });
     return (
-      <div className="form-group">
+    <div className="booking">
+      <h3 className="booking-price">$ {unitPrice[1]} <span className="booking-per-night">per night</span></h3>
+      <hr></hr>
+      <form className="form-group">
         <label htmlFor="dates">Dates</label>
         <DateRangePicker open="left" containerStyles={{display: "block"}}>
           <input id="dates" type="text" className="form-control"></input>
         </DateRangePicker>
-      </div>
+      </form>
+      <form className='form-group'>
+        <label htmlFor="guests">Guests</label>
+        <input type="number" className="form-control" id="guests" aria-describedby="emailHelp" placeholder=""></input>
+      </form>
+      <button className="btn btn-bwm btn-confirm btn-block btn btn-danger">Reserve</button>
+      <hr></hr>
+      <p className="booking-note-title">People are interested into this house</p>
+      <p className="booking-note-text">More than 500 people checked this rental in last month</p>
+    </div>
     )
   }
 }
