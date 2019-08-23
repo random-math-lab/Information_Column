@@ -23,4 +23,4 @@ for (let i = 0; i < seeder.allData.length; i++){
     db.query(sql, [currentData.price, currentData.availability, currentData.numberOfGuests, currentData.ratings, currentData.numberOfRatings, currentData.numberOfViews])
 }
 
-module.exports.db = db;
+module.exports = db;
