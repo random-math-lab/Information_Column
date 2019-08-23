@@ -4,7 +4,7 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 export default class App extends Component {
   render() {
     return (
-      <div className="booking">
+      <div className="container">
         <h3 className="booking-price">$ 80 <span className="booking-per-night">per night</span></h3>
         <hr></hr>
         <div className="form-group">

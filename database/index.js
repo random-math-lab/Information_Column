@@ -19,8 +19,8 @@ db.connect((err) => {
 db.query("TRUNCATE TABLE guests")
 for (let i = 0; i < seeder.allData.length; i++){
     let currentData = seeder.allData[i];
-    let sql = `INSERT INTO guests (price, availability, numberOfGuests) values (?, ?, ?)`
-    db.query(sql, [currentData.price, currentData.availability, currentData.numberOfGuests])
+    let sql = `INSERT INTO guests (price, availability, numberOfGuests, ratings, numberOfRatings, numberOfViews) values (?, ?, ?, ?, ?, ?)`
+    db.query(sql, [currentData.price, currentData.availability, currentData.numberOfGuests, currentData.ratings, currentData.numberOfRatings, currentData.numberOfViews])
 }
 
 module.exports.db = db;
