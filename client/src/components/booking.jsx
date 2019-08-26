@@ -125,7 +125,8 @@ class Booking extends React.Component {
   updateCalendarMonth(value) {
     const { calendarMonth } = this.state;
     this.setState({ calendarMonth: calendarMonth.add(value, 'months') });
-    console.log(calendarMonth)
+    console.log(calendarMonth.startOf('month').format('d'))
+    console.log(calendarMonth.endOf('month').format('D'))
   }
 
   updateCheckinDate(e) {

@@ -109,8 +109,8 @@ const DatesDropdown = (props) => {
     calendarMonth, updateCalendarMonth, available, isCheckinOpen, isCheckoutOpen, updateCheckinDate, updateCheckoutDate, checkinValue, checkoutValue,
   } = props;
 
-  const firstDayOfMonth = Number(calendarMonth.startOf('month').format('d'));
-  const daysInMonth = Number(calendarMonth.endOf('month').format('D'));
+  const firstDayOfMonth = Number(calendarMonth.startOf('month').format('d')); // starting index of the first day of month
+  const daysInMonth = Number(calendarMonth.endOf('month').format('D')); // number of days in a month
 
   const numWeeks = Math.ceil((firstDayOfMonth + daysInMonth) / 7);
 
