@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.static(`${__dirname}/../public`));
 
-app.get('/host/:hostid', (req, res) => {
+app.get('/guests/:hostid', (req, res) => {
   getBooking(req.params.hostid, (err, collection) => {
     if (err) {
       res.status(404).end(err);
