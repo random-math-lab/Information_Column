@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(`${__dirname}/../public`));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/guests/:hostid', (req, res) => {
   getBooking(req.params.hostid, (err, collection) => {
