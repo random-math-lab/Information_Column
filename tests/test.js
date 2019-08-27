@@ -7,13 +7,13 @@ import Booking from '../client/src/components/Booking.jsx';
 
 afterAll(() => db.close());
 
-// describe('Booking Component', () => {
-//   it('renders the Booking element', () => {
-//     const wrapper = shallow(<Booking />);
-//     console.log(wrapper);
-//     expect(wrapper.find('Booking')).toBe();
-//   });
-// });
+describe('Booking Component', () => {
+  it('renders the Booking element', () => {
+    const wrapper = shallow(<Booking />);
+    console.log(wrapper);
+    expect(wrapper.state('isCheckinOpen')).toBe(false);
+  });
+});
 
 // describe('A suite', function() {
 //   it('should render without throwing an error', function() {
