@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 import request from 'supertest';
 import app from '../server/index.js';
 import { db, getBooking } from '../database/index.js';
-import Booking from '../src/components/Booking.jsx';
+import Booking from '../client/src/components/Booking.jsx';
 
 afterAll(() => db.close());
 
@@ -50,8 +50,8 @@ describe('API Calls', () => {
     expect(res.statusCode).toBe(404);
   });
 
-  it('should respond to GET /host/:hostid with host data', async () => {
-    const res = await request(app).get('/host/101');
+  it('should respond to GET /guests/:hostid with guests data', async () => {
+    const res = await request(app).get('/guests/101');
     expect(res.statusCode).toBe(200);
     expect(res.body[0]).toHaveProperty('_id');
     expect(res.body[0]).toHaveProperty('ownerName');
