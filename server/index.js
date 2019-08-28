@@ -11,11 +11,12 @@ app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/guests/:hostid', (req, res) => {
-  getBooking(req.params.hostid, (err, collection) => {
+  console.log(req.params)
+  getBooking(req.params.hostid, (err, data) => {
     if (err) {
       res.status(404).end(err);
     } else {
-      res.status(200).send(collection);
+      res.status(200).send(data);
     }
   });
 });

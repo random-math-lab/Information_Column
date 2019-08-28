@@ -160,7 +160,6 @@ class Booking extends React.Component {
     return (
       <StyledStickyModule>
         <StyledBooking>
-          {/* <CloseButton /> */}
           <Price price={price} />
           <Reviews numReviews={numReviews} avgRating={avgRating} />
           <StyledBreak />

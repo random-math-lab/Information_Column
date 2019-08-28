@@ -25,7 +25,7 @@ db.dropDatabase(() => {
       price: randomNumber(50, 2000),
       cleaningFee: randomNumber(10, 30),
       occupancyFee: randomNumber(0, 5),
-      avgRating: (Math.random() * 5).toFixed(2),
+      avgRating: (Math.random() * 3 + 2).toFixed(2),
       numReviews: randomNumber(100, 2000),
       numViews: randomNumber(10, 600),
       minStay: randomNumber(0, 2),

@@ -25,12 +25,12 @@ const StyledDay = styled.td`
 const Day = (props) => {
   const { available, calendarMonth, date, isBlank, isCheckinOpen, isCheckoutOpen, updateCheckinDate, updateCheckoutDate, checkinValue, checkoutValue } = props;
   const displayDate = (value) => moment(value).format('MM/DD/YYYY').toString();
-  const dateString = date ? moment(calendarMonth).format('YYYY-MM').toString().concat('-', date.toString().padStart(2, '0')) : null;
+  const dateString = date ? moment(calendarMonth).format('YYYY-MM').toString().concat('-', date.toString().padStart(2, '0')) : null; // yyyy-mm-dd
   const isCheckinAvail = available.includes(dateString);
   const isCheckoutAvail = available.includes(moment(dateString).add(1, 'days').format('YYYY-MM-DD').toString());
   const isActive = (isCheckinAvail && isCheckinOpen) || (isCheckoutAvail && isCheckoutOpen);
   const isSelected = displayDate(dateString) === checkinValue || displayDate(dateString) === checkoutValue;
-  const updateDate = (date) => isCheckinOpen ? updateCheckinDate({target: {value: date}}) : updateCheckoutDate({target: {value: date}});
+  const updateDate = (date) => isCheckinOpen ? updateCheckinDate({target: {value: date}}) : updateCheckoutDate({target: {value: date}}); // event.target.value
 
   return (
     <StyledDay value={dateString} isActive={isActive} isSelected={isSelected} isBlank={isBlank} checkinValue={checkinValue} checkoutValue={checkoutValue} onClick={() => updateDate(moment(dateString).format('MM/DD/YYYY').toString())}>
