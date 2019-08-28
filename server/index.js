@@ -8,14 +8,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(`${__dirname}/../public`));
+app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/host/:hostid', (req, res) => {
-  getBooking(req.params.hostid, (err, collection) => {
+app.get('/guests/:hostid', (req, res) => {
+  console.log(req.params)
+  getBooking(req.params.hostid, (err, data) => {
     if (err) {
       res.status(404).end(err);
     } else {
-      res.status(200).send(collection);
+      res.status(200).send(data);
     }
   });
 });

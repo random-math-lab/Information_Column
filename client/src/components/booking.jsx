@@ -80,7 +80,7 @@ class Booking extends React.Component {
 
   getData() {
     const randomNum = Math.floor(Math.random() * 100) + 101;
-    axios.get(`http://127.0.0.1:3001/host/${randomNum}`)
+    axios.get(`http://127.0.0.1:3001/guests/${randomNum}`)
       .then(({ data }) => {
         const {
           _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available
@@ -125,13 +125,17 @@ class Booking extends React.Component {
   updateCalendarMonth(value) {
     const { calendarMonth } = this.state;
     this.setState({ calendarMonth: calendarMonth.add(value, 'months') });
+    console.log(calendarMonth.startOf('month').format('d'))
+    console.log(calendarMonth.endOf('month').format('D'))
   }
 
   updateCheckinDate(e) {
+    console.log(e.target.value);
     this.setState({ checkinValue: e.target.value });
   }
 
   updateCheckoutDate(e) {
+    console.log(e.target.value);
     this.setState({ checkoutValue: e.target.value });
   }
 
@@ -156,7 +160,6 @@ class Booking extends React.Component {
     return (
       <StyledStickyModule>
         <StyledBooking>
-          {/* <CloseButton /> */}
           <Price price={price} />
           <Reviews numReviews={numReviews} avgRating={avgRating} />
           <StyledBreak />
