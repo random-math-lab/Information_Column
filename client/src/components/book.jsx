@@ -65,7 +65,7 @@ const StyledChargeText = styled.div`
 const Book = () => (
   <StyledBookForm>
     <StyledBookButton>
-      <StyledButtonText>Book</StyledButtonText>
+      <StyledButtonText>Reserve</StyledButtonText>
     </StyledBookButton>
     <StyledChargeText>You won't be charged yet</StyledChargeText>
   </StyledBookForm>

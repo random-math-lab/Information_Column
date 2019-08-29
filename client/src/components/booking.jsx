@@ -60,6 +60,7 @@ class Booking extends React.Component {
       ownerName: '',
       guestMax: 0,
       price: 0,
+      totalPrice: 0,
       cleaningFee: 0,
       occupancyFee: 0,
       minstay: 0,
@@ -77,6 +78,7 @@ class Booking extends React.Component {
     this.updateNumAdults = this.updateNumAdults.bind(this);
     this.updateNumChildren = this.updateNumChildren.bind(this);
     this.updateNumInfants = this.updateNumInfants.bind(this);
+    this.updateTotalPrice = this.updateTotalPrice.bind(this);
   }
 
   getData() {
@@ -152,16 +154,23 @@ class Booking extends React.Component {
     this.setState(({ numInfants }) => ({ numInfants: numInfants += value }));
   }
 
+  updateTotalPrice(value){
+    console.log(value);
+    this.setState({
+      totalPrice: value
+    })
+  }
+
   render() {
     const {
       numReviews, avgRating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, 
-      guestMax, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue, price, available,
+      guestMax, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue, price, available, cleaningFee, occupancyFee, totalPrice
     } = this.state;
 
     return (
       <StyledStickyModule>
         <StyledBooking>
-          <Price price={price} />
+          <Price price={price} totalPrice={totalPrice} />
           <Reviews numReviews={numReviews} avgRating={avgRating} />
           <StyledBreak />
           <Dates
@@ -193,8 +202,10 @@ class Booking extends React.Component {
           <PaymentWindow 
           price={price}
           numAdults={numAdults}
-          checkinValue={checkinValue} 
-          checkoutValue={checkoutValue}
+          numChildren={numChildren}
+          cleaningFee={cleaningFee}
+          occupancyFee={occupancyFee}
+          updateTotalPrice={this.updateTotalPrice}
           /> : null}
           <Book />
           <StyledBreak />
