@@ -10,6 +10,7 @@ import Guests from './Guests.jsx';
 import Book from './Book.jsx';
 import Info from './Info.jsx';
 import Report from './Report.jsx';
+import PaymentWindow from './PaymentWindow.jsx';
 
 const StyledStickyModule = styled.div`
   position: sticky;
@@ -188,6 +189,13 @@ class Booking extends React.Component {
             updateNumChildren={this.updateNumChildren}
             updateNumInfants={this.updateNumInfants}
           />
+          {checkinValue && checkoutValue ? 
+          <PaymentWindow 
+          price={price}
+          numAdults={numAdults}
+          checkinValue={checkinValue} 
+          checkoutValue={checkoutValue}
+          /> : null}
           <Book />
           <StyledBreak />
           <Info numViews={numViews} />
