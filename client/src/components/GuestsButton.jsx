@@ -15,16 +15,16 @@ const StyledGuestsButton = styled.button`
   border-bottom-style: solid;
   border-width: ${({ isOpen }) => isOpen ? '1px 1px 2px 1px' : '1px'};
   border-radius: 2px;
-  padding: 8px;
+  padding: 4px;
   border-style: solid;
 `;
 
 const StyledNumGuestsLabel = styled.label`
-  font-size: 17px;
-  margin-left: 8px;
-  padding: ${({ isOpen }) => isOpen ? '4px 8px 4px 8px' : '0px'};
+  font-size: 19px;
+  margin-left: 10px;
+  padding: ${({ isOpen }) => isOpen ? '4px 8px 4px 8px' : '5px 0px 0px 0px'};
   color: rgb(72. 72. 72);
-  font-weight: 400;
+  font-weight: 300;
   background: ${({ isOpen }) => isOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
   border-color: ${({ isOpen }) => isOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
   border-radius: 3px;
