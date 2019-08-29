@@ -1,9 +1,12 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount, render} from 'enzyme';
 import request from 'supertest';
 import app from '../server/index.js';
 import { db, getBooking } from '../database/index.js';
 import Booking from '../client/src/components/Booking.jsx';
+import Guests from '../client/src/components/Guests.jsx';
+import Price from '../client/src/components/Price.jsx';
+import Calendar from '../client/src/components/Calendar.jsx';
 
 afterAll(() => db.close());
 
@@ -12,26 +15,40 @@ describe('Booking Component', () => {
     const wrapper = shallow(<Booking />);
     console.log(wrapper);
     expect(wrapper.state('isCheckinOpen')).toBe(false);
+    expect(wrapper.state('numAdults')).toBe(1);
   });
 });
 
-// describe('A suite', function() {
-//   it('should render without throwing an error', function() {
-//     expect(shallow(<Foo />).contains(<div className="foo">Bar</div>)).toBe(true);
-//   });
+describe('components Test Suite', () => {
+  it('Should render correctly with no props', () => {
+    const wrapper = shallow(<Guests />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-//   it('should be selectable by class "foo"', function() {
-//     expect(shallow(<Foo />).is('.foo')).toBe(true);
-//   });
+  it('Should render correctly with no props', () => {
+    const wrapper = shallow(<Price />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 
-//   it('should mount in a full DOM', function() {
-//     expect(mount(<Foo />).find('.foo').length).toBe(1);
-//   });
+describe('<Guests /> rendering', () => {
+  it('renders without crashing', () => {
+    shallow(<Guests isOpen/>);
+  });
+});
 
-//   it('should render to static HTML', function() {
-//     expect(render(<Foo />).text()).toEqual('Bar');
-//   });
-// });
+describe('<Price /> rendering', () => {
+  it('renders without crashing', () => {
+    shallow(<Price price/>);
+  });
+});
+
+describe('<Calendar /> rendering', () => {
+  it('renders without crashing', () => {
+    shallow(<Calendar calendarMonth firstDayOfMonth/>);
+  });
+});
+
 
 describe('Database', () => {
   it('retrieves listing data from the database', () => {
