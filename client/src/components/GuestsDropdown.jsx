@@ -149,13 +149,13 @@ const GuestsDropdown = (props) => {
           <StyledMenuText>Adults</StyledMenuText>
           <StyledMinusCounterPlusWrapper>
             <StyledButton isActive={isAdultMinusActive} onClick={() => isAdultMinusActive ? updateNumAdults(-1) : null}>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="2" y="11" /></StyledSVG>
             </StyledButton>
             <StyledCounterText>{numAdults}</StyledCounterText>
             <StyledButton isActive={isAdultPlusActive} onClick={() => isAdultPlusActive ? updateNumAdults(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
-                <rect height="2" rx="1" width="12" x="6" y="11" />
-                <rect height="12" rx="1" width="2" x="11" y="6" />
+                <rect height="2" rx="1" width="12" x="2" y="11" />
+                <rect height="12" rx="1" width="2" x="7" y="6" />
               </StyledSVG>
             </StyledButton>
           </StyledMinusCounterPlusWrapper>
@@ -168,14 +168,14 @@ const GuestsDropdown = (props) => {
           <StyledMinusCounterPlusWrapper>
             <StyledButton isActive={isChildrenMinusActive} onClick={() => isChildrenMinusActive ? updateNumChildren(-1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
-                <rect height="2" rx="1" width="12" x="6" y="11" />
+                <rect height="2" rx="1" width="12" x="2" y="11" />
               </StyledSVG>
             </StyledButton>
             <StyledCounterText>{numChildren}</StyledCounterText>
             <StyledButton isActive={isChildrenPlusActive} onClick={() => isChildrenPlusActive ? updateNumChildren(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
-                <rect height="2" rx="1" width="12" x="6" y="11" />
-                <rect height="12" rx="1" width="2" x="11" y="6" />
+                <rect height="2" rx="1" width="12" x="2" y="11" />
+                <rect height="12" rx="1" width="2" x="7" y="6" />
               </StyledSVG>
             </StyledButton>
           </StyledMinusCounterPlusWrapper>
@@ -188,14 +188,14 @@ const GuestsDropdown = (props) => {
           <StyledMinusCounterPlusWrapper>
             <StyledButton isActive={isInfantsMinusActive} onClick={() => isInfantsMinusActive ? updateNumInfants(-1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
-                <rect height="2" rx="1" width="12" x="6" y="11" />
+                <rect height="2" rx="1" width="12" x="2" y="11" />
               </StyledSVG>
             </StyledButton>
             <StyledCounterText>{numInfants}</StyledCounterText>
             <StyledButton isActive={isInfantsPlusActive} onClick={() => isInfantsPlusActive ? updateNumInfants(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
-                <rect height="2" rx="1" width="12" x="6" y="11" />
-                <rect height="12" rx="1" width="2" x="11" y="6" />
+                <rect height="2" rx="1" width="12" x="2" y="11" />
+                <rect height="12" rx="1" width="2" x="7" y="6" />
               </StyledSVG>
             </StyledButton>
           </StyledMinusCounterPlusWrapper>

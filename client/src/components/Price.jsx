@@ -33,11 +33,11 @@ const StyledPricePerNight = styled.div`
 `;
 
 const Price = (props) => {
-  const { price } = props;
+  const { price, totalPrice } = props;
 
   return (
     <StyledPrice>
-      <StyledPriceAmt>${price}</StyledPriceAmt>
+      <StyledPriceAmt>${totalPrice ? totalPrice: price}</StyledPriceAmt>
       <StyledPricePerNight>per night</StyledPricePerNight>
     </StyledPrice>
   );
