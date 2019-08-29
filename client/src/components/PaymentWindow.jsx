@@ -10,11 +10,23 @@ const PaymentWindow = (props) =>{
   const handleChange = (amount) => updateTotalPrice(amount);
 
   return (
-    <ul className='list-group list-group-flush'>
-      <li className='list-group-item'>${price} / night: ${price * numPerson}</li>
-      <li className='list-group-item'>Cleaning fee: ${houseKeepingFee}</li>
-      <li className='list-group-item'>Service fee: ${serviceFee}</li>
-      <li className='list-group-item' onClick={() => handleChange(total)}>Total: ${total}</li>
+    <ul className="list-group list-group-flush">
+      <li className="list-group-item d-flex justify-content-between align-items-center">
+        ${price} / night: 
+        <span>${price * numPerson}</span>
+      </li>
+      <li className="list-group-item d-flex justify-content-between align-items-center">
+        Cleaning fee:
+        <span>${houseKeepingFee}</span>
+      </li>
+      <li className="list-group-item d-flex justify-content-between align-items-center">
+        Service fee:
+        <span>${serviceFee}</span>
+      </li>
+      <li className="list-group-item d-flex justify-content-between align-items-center">
+        Total:
+        <span onClick={() => handleChange(total)}>${total}</span>
+      </li>
     </ul>
   )
 }

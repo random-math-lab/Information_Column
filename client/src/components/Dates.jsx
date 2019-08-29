@@ -28,12 +28,13 @@ const StyledDatesBox = styled.div`
   border-style: solid;
   border-color: rgb(235, 235, 235);
   border-radius: 2px;
+  padding: 1px;
 `;
 
 const StyledDatesRow = styled.div`
   display: table-row;
   width: 100%;
-  height: 100%
+  height: 100%;
 `;
 
 const StyledDateCell = styled.div`
@@ -79,9 +80,9 @@ const StyledSVGWrapper = styled.div`
 `;
 
 const StyledSVG = styled.svg`
-  height: 24px;
-  width: 24px;
-  padding: 6px 0px 6px 0px;
+  height: 38px;
+  width: 34px;
+  padding: 6px 10px 6px 0px;
   margin: 0px;
 `;
 
